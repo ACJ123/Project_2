@@ -70,6 +70,11 @@ check_str:
 	beqz $t5, prepare_for_conversion
 	beq $t5, $t1, prepare_for_conversion
 	slti $t6, $t5, 48
+	bne $t6, $zero, err_invalid_input
+	slti $t6, $t5, 58
+	bne $t6, $zero, step_char_forward
+	slti $t6, $t5, 65
+	bne $t6, $zero, err_invalid_input
 	
 	
 	
