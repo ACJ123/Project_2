@@ -120,10 +120,15 @@ base_33_lower_conv:
 	addi $s4, $s4, -87
 
 accumulated_result:
-	beq $s0, $s3, first_digit
-	beq $s0, $s2, second_digit
-	beq $s0, $s1, third_digit
+	beq $s0, $s3, first_integer
+	beq $s0, $s2, second_integer
+	beq $s0, $s1, third_integer
 	beq $s0, $s5, fourth_integer
+first_integer:
+	li $s6, 29791 # (base N)^3
+	mult $s4, $s6
+	mflo $s7
+	add $t7, $t7, $s7
 fourth_integer:
 	li $s6, 1
 	mult $s4, $s6
