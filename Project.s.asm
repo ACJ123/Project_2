@@ -65,7 +65,11 @@ after_len_found:
 	move $a0, $t4
 	j check_str
 	
-	
+check_str:
+	lb $t5, 0($a0)
+	beqz $t5, prepare_for_conversion
+	beq $t5, $t1, prepare_for_conversion
+	slti $t6, $t5, 48
 	
 	
 	
