@@ -123,6 +123,12 @@ accumulated_result:
 	beq $s0, $s3, first_digit
 	beq $s0, $s2, second_digit
 	beq $s0, $s1, third_digit
+	beq $s0, $s5, fourth_integer
+fourth_integer:
+	li $s6, 1
+	mult $s4, $s6
+	mflo $s7
+	add $t7, $t7, $s7
 
 
 	
