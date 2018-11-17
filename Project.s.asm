@@ -61,6 +61,9 @@ len_iteration:
 after_len_found:
 	beqz $t0, err_empty_input
 	slti $t3, $t0, 5
+	beqz $t3, err_long_input
+	move $a0, $t4
+	j check_str
 	
 	
 	
