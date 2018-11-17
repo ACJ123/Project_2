@@ -80,6 +80,12 @@ check_str:
 	slti $t6, $t5, 97
 	bne $t6, $zero, err_invalid_input
 	slti $t6, $t5, 118 
+	bne $t6, $zero, step_char_forward
+	bgt $t5, 119, err_invalid_input 
+
+step_char_forward:
+	addi $a0, $a0, 1
+	j check_str
 	
 	
 	
