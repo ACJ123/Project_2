@@ -43,15 +43,15 @@ delete_left_pad:
 
 delete_first_char:
 	addi $a0, $a0, 1
-	j delete_left_pad
+	j delete_left_pad #jump back to dele left pad function
 	
 input_len:
 	addi $t0, $t0, 0
 	addi $t1, $t1, 10
-	add $t4, $t4, $a0
+	add $t4, $t4, $a0 #adds the value of $t4 into $a0
 	
 len_iteration:
-	lb $t2, 0($a0)
+	lb $t2, 0($a0)#
 	beqz $t2, after_len_found
 	beq $t2, $t1, after_len_found
 	addi $a0, $a0, 1
@@ -159,4 +159,11 @@ fourth_integer:
 	addi $s0, $s0, -1
 	addi $a0, $a0, 1
 	j base_convert_input
+	
+print_result:
+	li $v0, 1
+	move $a0, $t7
+	syscall
+
+j exit
 	
