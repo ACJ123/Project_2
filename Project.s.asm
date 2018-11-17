@@ -32,3 +32,9 @@ main:
  li $v0, 8
  la $a0, userInput
  li $a1, 250
+  syscall
+
+delete_left_pad:
+	li $t8, 32 # this line will end up making a space
+	lb $t9, 0($a0)
+	beq $t8, $t9, delete_first_char
