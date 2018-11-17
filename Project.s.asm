@@ -20,3 +20,9 @@ err_invalid_input:
  la $a0, invalidInput
  li $v0, 4
  syscall
+  j exit
+
+err_long_input:
+ la $a0, longInput
+ li $v0, 4
+ syscall
