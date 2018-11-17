@@ -51,7 +51,7 @@ input_len:
 	add $t4, $t4, $a0 #adds the value of $t4 into $a0
 	
 len_iteration:
-	lb $t2, 0($a0)#
+	lb $t2, 0($a0)#takes the memeory $t2 and puts it $a0
 	beqz $t2, after_len_found
 	beq $t2, $t1, after_len_found
 	addi $a0, $a0, 1
