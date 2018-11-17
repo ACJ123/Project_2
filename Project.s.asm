@@ -8,3 +8,9 @@
   .text
   exit:
   li $v0, 10
+   syscall
+
+err_empty_input:
+ la $a0, emptyInput
+ li $v0, 4
+ syscall
