@@ -14,3 +14,9 @@ err_empty_input:
  la $a0, emptyInput
  li $v0, 4
  syscall
+  j exit
+
+err_invalid_input:
+ la $a0, invalidInput
+ li $v0, 4
+ syscall
