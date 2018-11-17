@@ -111,6 +111,11 @@ base_convert_input:
 base_ten_conv:
 	addi $s4, $s4, -48
 	j accumulated_result
+	
+base_33_upper_conv:
+	addi $s4, $s4, -55
+	j accumulated_result
+	
 
 	
 	
