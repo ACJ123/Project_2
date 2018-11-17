@@ -97,6 +97,11 @@ prepare_for_conversion:
 	li $s1, 1
 	li $s5, 0
 
+base_convert_input:
+	lb $s4, 0($a0)
+	beqz $s4, print_result
+	beq $s4, $t1, print_result
+	slti $t6, $s4, 58
 	
 	
 	
