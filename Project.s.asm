@@ -75,6 +75,11 @@ check_str:
 	bne $t6, $zero, step_char_forward
 	slti $t6, $t5, 65
 	bne $t6, $zero, err_invalid_input
+	slti $t6, $t5, 86 
+	bne $t6, $zero, step_char_forward
+	slti $t6, $t5, 97
+	bne $t6, $zero, err_invalid_input
+	slti $t6, $t5, 118 
 	
 	
 	
