@@ -141,6 +141,11 @@ second_integer:
 	addi $s0, $s0, -1
 	addi $a0, $a0, 1
 	j base_convert_input
+	
+third_integer:
+	li $s6, 31 # (base N)^1
+	mult $s4, $s6
+	mflo $s7
 fourth_integer:
 	li $s6, 1
 	mult $s4, $s6
