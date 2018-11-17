@@ -116,6 +116,14 @@ base_33_upper_conv:
 	addi $s4, $s4, -55
 	j accumulated_result
 	
+base_33_lower_conv:
+	addi $s4, $s4, -87
+
+accumulated_result:
+	beq $s0, $s3, first_digit
+	beq $s0, $s2, second_digit
+	beq $s0, $s1, third_digit
+
 
 	
 	
